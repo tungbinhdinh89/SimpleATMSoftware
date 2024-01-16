@@ -96,6 +96,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlDark;
             ClientSize = new Size(993, 219);
             Controls.Add(panel1);
             Name = "BalanceForm";
