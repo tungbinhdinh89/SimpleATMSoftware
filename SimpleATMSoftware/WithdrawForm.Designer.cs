@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            txtAmount = new TextBox();
             label1 = new Label();
             label2 = new Label();
             btnClose1 = new Button();
@@ -38,13 +38,14 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // txtAmount
             // 
-            textBox1.Location = new Point(46, 85);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(925, 50);
-            textBox1.TabIndex = 0;
+            txtAmount.Location = new Point(46, 85);
+            txtAmount.Multiline = true;
+            txtAmount.Name = "txtAmount";
+            txtAmount.Size = new Size(925, 50);
+            txtAmount.TabIndex = 0;
+            txtAmount.Text = "Enter your amount";
             // 
             // label1
             // 
@@ -89,12 +90,13 @@
             btnAccept.TabIndex = 4;
             btnAccept.Text = "Accept";
             btnAccept.UseVisualStyleBackColor = false;
+            btnAccept.Click += btnAccept_Click;
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlDark;
             panel1.Controls.Add(btnX);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtAmount);
             panel1.Controls.Add(btnAccept);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnClose1);
@@ -132,7 +134,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtAmount;
         private Label label1;
         private Label label2;
         private Button btnClose1;
