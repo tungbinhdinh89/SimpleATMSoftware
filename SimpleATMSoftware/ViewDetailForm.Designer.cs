@@ -28,57 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            label1 = new Label();
+            btnViewBalance = new Button();
+            btnWithdraw = new Button();
+            btnLast5Transactions = new Button();
+            lbGreeting = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnViewBalance
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calibri", 16.1194019F);
-            button1.Location = new Point(79, 159);
-            button1.Name = "button1";
-            button1.Size = new Size(813, 56);
-            button1.TabIndex = 0;
-            button1.Text = "View Balance";
-            button1.UseVisualStyleBackColor = false;
+            btnViewBalance.BackColor = SystemColors.ActiveCaption;
+            btnViewBalance.FlatStyle = FlatStyle.Flat;
+            btnViewBalance.Font = new Font("Calibri", 16.1194019F);
+            btnViewBalance.Location = new Point(79, 159);
+            btnViewBalance.Name = "btnViewBalance";
+            btnViewBalance.Size = new Size(813, 56);
+            btnViewBalance.TabIndex = 0;
+            btnViewBalance.Text = "View Balance";
+            btnViewBalance.UseVisualStyleBackColor = false;
+            btnViewBalance.Click += btnViewBalance_Click;
             // 
-            // button2
+            // btnWithdraw
             // 
-            button2.BackColor = SystemColors.ActiveCaption;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Calibri", 16.1194019F);
-            button2.Location = new Point(79, 259);
-            button2.Name = "button2";
-            button2.Size = new Size(813, 56);
-            button2.TabIndex = 1;
-            button2.Text = "Withdraw";
-            button2.UseVisualStyleBackColor = false;
+            btnWithdraw.BackColor = SystemColors.ActiveCaption;
+            btnWithdraw.FlatStyle = FlatStyle.Flat;
+            btnWithdraw.Font = new Font("Calibri", 16.1194019F);
+            btnWithdraw.Location = new Point(79, 259);
+            btnWithdraw.Name = "btnWithdraw";
+            btnWithdraw.Size = new Size(813, 56);
+            btnWithdraw.TabIndex = 1;
+            btnWithdraw.Text = "Withdraw";
+            btnWithdraw.UseVisualStyleBackColor = false;
+            btnWithdraw.Click += btnWithdraw_Click;
             // 
-            // button3
+            // btnLast5Transactions
             // 
-            button3.BackColor = SystemColors.ActiveCaption;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Calibri", 16.1194019F);
-            button3.Location = new Point(79, 359);
-            button3.Name = "button3";
-            button3.Size = new Size(813, 56);
-            button3.TabIndex = 2;
-            button3.Text = "Last 5 transactions";
-            button3.UseVisualStyleBackColor = false;
+            btnLast5Transactions.BackColor = SystemColors.ActiveCaption;
+            btnLast5Transactions.FlatStyle = FlatStyle.Flat;
+            btnLast5Transactions.Font = new Font("Calibri", 16.1194019F);
+            btnLast5Transactions.Location = new Point(79, 359);
+            btnLast5Transactions.Name = "btnLast5Transactions";
+            btnLast5Transactions.Size = new Size(813, 56);
+            btnLast5Transactions.TabIndex = 2;
+            btnLast5Transactions.Text = "Last 5 transactions";
+            btnLast5Transactions.UseVisualStyleBackColor = false;
+            btnLast5Transactions.Click += btnLast5Transactions_Click;
             // 
-            // label1
+            // lbGreeting
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.8208952F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(79, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(159, 30);
-            label1.TabIndex = 3;
-            label1.Text = "Hi! User name";
+            lbGreeting.AutoSize = true;
+            lbGreeting.Font = new Font("Segoe UI", 11.8208952F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbGreeting.Location = new Point(79, 33);
+            lbGreeting.Name = "lbGreeting";
+            lbGreeting.Size = new Size(159, 30);
+            lbGreeting.TabIndex = 3;
+            lbGreeting.Text = "Hi! User name";
             // 
             // ViewDetailForm
             // 
@@ -86,10 +89,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(973, 829);
-            Controls.Add(label1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(lbGreeting);
+            Controls.Add(btnLast5Transactions);
+            Controls.Add(btnWithdraw);
+            Controls.Add(btnViewBalance);
             Name = "ViewDetailForm";
             Text = "ViewDetailForm";
             ResumeLayout(false);
@@ -98,9 +101,9 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Label label1;
+        private Button btnViewBalance;
+        private Button btnWithdraw;
+        private Button btnLast5Transactions;
+        private Label lbGreeting;
     }
 }
