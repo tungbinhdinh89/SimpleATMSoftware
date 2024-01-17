@@ -11,6 +11,10 @@ namespace ATMApp.Lib.Services
     {
         public List<ATM> GetDataFromJson(string path)
         {
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                throw new ArgumentNullException("path not empty");
+            }
             return [];
         }
 
