@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label3 = new Label();
-            btnX = new Button();
-            label1 = new Label();
             btnClose1 = new Button();
+            lbBalance = new Label();
+            btnX = new Button();
+            label3 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,7 +40,7 @@
             // 
             panel1.BackColor = SystemColors.ControlDark;
             panel1.Controls.Add(btnClose1);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lbBalance);
             panel1.Controls.Add(btnX);
             panel1.Controls.Add(label3);
             panel1.Location = new Point(12, 2);
@@ -48,15 +48,27 @@
             panel1.Size = new Size(982, 218);
             panel1.TabIndex = 3;
             // 
-            // label3
+            // btnClose1
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Calibri", 18.2686558F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(34, 23);
-            label3.Name = "label3";
-            label3.Size = new Size(128, 41);
-            label3.TabIndex = 3;
-            label3.Text = "Balance";
+            btnClose1.BackColor = SystemColors.GradientActiveCaption;
+            btnClose1.FlatStyle = FlatStyle.Flat;
+            btnClose1.Font = new Font("Microsoft Sans Serif", 10.2089548F, FontStyle.Bold);
+            btnClose1.Location = new Point(819, 143);
+            btnClose1.Name = "btnClose1";
+            btnClose1.Size = new Size(132, 50);
+            btnClose1.TabIndex = 9;
+            btnClose1.Text = "Close";
+            btnClose1.UseVisualStyleBackColor = false;
+            // 
+            // lbBalance
+            // 
+            lbBalance.AutoSize = true;
+            lbBalance.Font = new Font("Segoe UI", 11.8208952F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbBalance.Location = new Point(34, 84);
+            lbBalance.Name = "lbBalance";
+            lbBalance.Size = new Size(156, 30);
+            lbBalance.TabIndex = 8;
+            lbBalance.Text = "Your balance is";
             // 
             // btnX
             // 
@@ -70,27 +82,15 @@
             btnX.Text = "X";
             btnX.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label3
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.8208952F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(34, 84);
-            label1.Name = "label1";
-            label1.Size = new Size(156, 30);
-            label1.TabIndex = 8;
-            label1.Text = "Your balance is";
-            // 
-            // btnClose1
-            // 
-            btnClose1.BackColor = SystemColors.GradientActiveCaption;
-            btnClose1.FlatStyle = FlatStyle.Flat;
-            btnClose1.Font = new Font("Microsoft Sans Serif", 10.2089548F, FontStyle.Bold);
-            btnClose1.Location = new Point(819, 143);
-            btnClose1.Name = "btnClose1";
-            btnClose1.Size = new Size(132, 50);
-            btnClose1.TabIndex = 9;
-            btnClose1.Text = "Close";
-            btnClose1.UseVisualStyleBackColor = false;
+            label3.AutoSize = true;
+            label3.Font = new Font("Calibri", 18.2686558F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(34, 23);
+            label3.Name = "label3";
+            label3.Size = new Size(128, 41);
+            label3.TabIndex = 3;
+            label3.Text = "Balance";
             // 
             // BalanceForm
             // 
@@ -110,7 +110,7 @@
         private Panel panel1;
         private Label label3;
         private Button btnX;
-        private Label label1;
+        private Label lbBalance;
         private Button btnClose1;
     }
 }
