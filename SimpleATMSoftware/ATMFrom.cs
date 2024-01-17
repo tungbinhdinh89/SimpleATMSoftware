@@ -29,7 +29,8 @@ namespace SimpleATMSoftware
 
                 if (!ATMServices.ValidationATMCard(cardNumber, pin, jsonData))
                 {
-                    MessageBox.Show("Card Number or Pin is invalid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show("Card Number or Pin is invalid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lbMessage.Text = "Card Number or Pin is invalid";
                     var all = ATMServices.ValidationATMCard(cardNumber, pin, jsonData);
                 }
                 else

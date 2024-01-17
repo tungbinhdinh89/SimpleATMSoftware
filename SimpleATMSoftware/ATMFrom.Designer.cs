@@ -32,6 +32,7 @@
             txtPinNumber = new TextBox();
             btnLogin = new Button();
             btnX = new Button();
+            lbMessage = new Label();
             SuspendLayout();
             // 
             // txtCardNumber
@@ -59,7 +60,7 @@
             btnLogin.BackColor = SystemColors.ActiveCaption;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Calibri", 16.1194019F);
-            btnLogin.Location = new Point(111, 378);
+            btnLogin.Location = new Point(111, 425);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(715, 56);
             btnLogin.TabIndex = 3;
@@ -80,6 +81,16 @@
             btnX.UseVisualStyleBackColor = true;
             btnX.Click += btnX_Click;
             // 
+            // lbMessage
+            // 
+            lbMessage.AutoSize = true;
+            lbMessage.Font = new Font("Segoe UI Semibold", 13.970149F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbMessage.ForeColor = Color.DarkRed;
+            lbMessage.Location = new Point(111, 369);
+            lbMessage.Name = "lbMessage";
+            lbMessage.Size = new Size(0, 36);
+            lbMessage.TabIndex = 8;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -87,6 +98,7 @@
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(931, 802);
             ControlBox = false;
+            Controls.Add(lbMessage);
             Controls.Add(btnX);
             Controls.Add(btnLogin);
             Controls.Add(txtPinNumber);
@@ -104,5 +116,6 @@
         private TextBox txtPinNumber;
         private Button btnLogin;
         private Button btnX;
+        private Label lbMessage;
     }
 }
