@@ -8,6 +8,7 @@ namespace SimpleATMSoftware
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -17,18 +18,21 @@ namespace SimpleATMSoftware
                 var cardNumber = txtCardNumber.Text;
                 var pin = txtPinNumber.Text;
 
+                var jsonData = ATMServices.GetDataFromJson("bank.json");
+
                 if (string.IsNullOrWhiteSpace(cardNumber) || string.IsNullOrWhiteSpace(pin))
                 {
                     throw new ArgumentException("Card Number or Pin is empty");
                 }
 
-                if (!ATMServices.ValidationATMCard(cardNumber, pin))
+                if (!ATMServices.ValidationATMCard(cardNumber, pin, jsonData))
                 {
                     MessageBox.Show("Card Number or Pin is invalid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     var detailForm = new ViewDetailForm();
+                    this.Hide();
                     detailForm.ShowDialog();
                 }
             }

@@ -27,11 +27,11 @@ namespace SimpleATMSoftware
                 return;
             }
 
-            if (!IsNumeric(txtAmount.Text))
-            {
-                MessageBox.Show("Amount should be a valid number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            //if (!IsNumeric(txtAmount.Text))
+            //{
+            //    MessageBox.Show("Amount should be a valid number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
             var amount = Convert.ToInt32(btnAccept.Text);
             ATMServices.Withdraw(amount);

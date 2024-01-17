@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="bank.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bank.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ATMApp.Lib\ATMApp.Lib.csproj" />
   </ItemGroup>
 
