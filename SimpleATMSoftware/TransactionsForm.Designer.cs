@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            listView1 = new ListView();
+            lvTransaction = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             panel1 = new Panel();
@@ -48,16 +48,16 @@
             label1.Text = "Last 5 transactions";
             label1.UseWaitCursor = true;
             // 
-            // listView1
+            // lvTransaction
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
-            listView1.GridLines = true;
-            listView1.Location = new Point(-1, 129);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(805, 510);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            lvTransaction.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            lvTransaction.GridLines = true;
+            lvTransaction.Location = new Point(-1, 129);
+            lvTransaction.Name = "lvTransaction";
+            lvTransaction.Size = new Size(805, 510);
+            lvTransaction.TabIndex = 1;
+            lvTransaction.UseCompatibleStateImageBehavior = false;
+            lvTransaction.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -104,7 +104,7 @@
             ClientSize = new Size(808, 638);
             ControlBox = false;
             Controls.Add(panel1);
-            Controls.Add(listView1);
+            Controls.Add(lvTransaction);
             FormBorderStyle = FormBorderStyle.None;
             Name = "TransactionsForm";
             StartPosition = FormStartPosition.CenterParent;
@@ -117,7 +117,7 @@
         #endregion
 
         private Label label1;
-        private ListView listView1;
+        private ListView lvTransaction;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private Panel panel1;

@@ -73,12 +73,23 @@ namespace ATMApp.Lib.Services
                 throw new InvalidOperationException("Insufficient funds");
             }
 
+            matchingCard.Transactions.Add(new Transaction
+            {
+                TransactionDate = DateTime.Now,
+                Amount = amount
+            });
             return matchingCard.Balance -= amount;
         }
 
-        public List<ATM> ShowLast5Transactions (int amount)
+        public List<Transaction> ShowLast5Transactions (ATM matchingCard)
         {
-            return new List<ATM> ();
+            if (matchingCard == null)
+            {
+                throw new ArgumentNullException(nameof(matchingCard));
+            }
+
+            var transactions = matchingCard.Transactions?.Take(5).ToList();
+            return transactions ?? new List<Transaction>();
         }
     }
 }

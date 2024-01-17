@@ -11,10 +11,12 @@ namespace SimpleATMSoftware
         {
             InitializeComponent();
             currentCard = matchingCard;
+            RenderToListView(matchingCard.Transactions);
         }
 
         public void RenderToListView(List<Transaction> transactions)
         {
+            lvTransaction.Clear();
             foreach (Transaction transaction in transactions)
             {
                 if (transaction == null)
@@ -22,7 +24,10 @@ namespace SimpleATMSoftware
                     throw new ArgumentNullException("Not null");
                 }
 
-
+                ListViewItem item = new ListViewItem(transaction.TransactionDate.ToString());
+                item.SubItems.Add(transaction.Amount.ToString());
+                item.Tag = transaction;
+                lvTransaction.Items.Add(item);
             }
         }
 

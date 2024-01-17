@@ -7,13 +7,13 @@
         public string Pin { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public decimal Balance { get; set; }   
-        public Transaction Transaction { get; set; } = new Transaction();
+        public List<Transaction> Transactions { get; set; } = new  List<Transaction>();
 
     }
 
     public class Transaction
     {
-        DateTime TransactionDate { get; set; }
+        public DateTime TransactionDate { get; set; }
         public decimal Amount { get; set; }
     }
 }
