@@ -1,3 +1,4 @@
+using ATMApp.Lib.Models;
 using ATMApp.Lib.Services;
 
 namespace SimpleATMSoftware
@@ -5,6 +6,7 @@ namespace SimpleATMSoftware
     public partial class Form1 : Form
     {
         public ATMServices ATMServices = new ATMServices();
+        public ATM matchingCard ;
         public Form1()
         {
             InitializeComponent();
@@ -28,10 +30,12 @@ namespace SimpleATMSoftware
                 if (!ATMServices.ValidationATMCard(cardNumber, pin, jsonData))
                 {
                     MessageBox.Show("Card Number or Pin is invalid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    var all = ATMServices.ValidationATMCard(cardNumber, pin, jsonData);
                 }
                 else
                 {
-                    var detailForm = new ViewDetailForm();
+                    matchingCard = jsonData.FirstOrDefault(x => x.CardNumber == cardNumber && x.Pin == pin);
+                    var detailForm = new ViewDetailForm(matchingCard);
                     this.Hide();
                     detailForm.ShowDialog();
                 }

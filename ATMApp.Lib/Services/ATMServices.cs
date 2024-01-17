@@ -42,19 +42,38 @@ namespace ATMApp.Lib.Services
             {
                 return false; 
             }
-            ATM matchingCard = atm.FirstOrDefault(x => x.CardNumber == cardNumber && x.Pin == pin);
+             var matchingCard = atm.FirstOrDefault(x => x.CardNumber == cardNumber && x.Pin == pin);
 
             return matchingCard != null;
         }
 
-        public decimal ShowBalance ()
-        { 
-            return 0;
+        public decimal ShowBalance (ATM matchingCard)
+        {
+            if (matchingCard is null)
+            {
+                throw new ArgumentNullException(nameof(matchingCard), "Matching card cannot be null");
+            }
+            return matchingCard.Balance;
         }
 
-        public decimal Withdraw(int amount)
+        public decimal Withdraw(int amount, ATM matchingCard)
         {
-            return 0;
+            if (matchingCard is null)
+            {
+                throw new ArgumentNullException(nameof(matchingCard), "Matching card cannot be null");
+            }
+
+            if (amount < 0)
+            {
+                throw new ArgumentException("Amount must be a non-negative value", nameof(amount));
+            }
+
+            if (amount > matchingCard.Balance)
+            {
+                throw new InvalidOperationException("Insufficient funds");
+            }
+
+            return matchingCard.Balance -= amount;
         }
 
         public List<ATM> ShowLast5Transactions (int amount)

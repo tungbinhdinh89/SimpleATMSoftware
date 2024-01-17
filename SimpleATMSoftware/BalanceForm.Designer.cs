@@ -59,6 +59,7 @@
             btnClose1.TabIndex = 9;
             btnClose1.Text = "Close";
             btnClose1.UseVisualStyleBackColor = false;
+            btnClose1.Click += btnClose1_Click;
             // 
             // lbBalance
             // 
@@ -81,6 +82,7 @@
             btnX.TabIndex = 7;
             btnX.Text = "X";
             btnX.UseVisualStyleBackColor = true;
+            btnX.Click += btnX_Click;
             // 
             // label3
             // 

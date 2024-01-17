@@ -1,4 +1,5 @@
-﻿using ATMApp.Lib.Services;
+﻿using ATMApp.Lib.Models;
+using ATMApp.Lib.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,22 @@ namespace SimpleATMSoftware
     public partial class BalanceForm : Form
     {
         public ATMServices ATMServices { get; set; } = new ATMServices();
-        public BalanceForm()
+        public BalanceForm(ATM currentCard)
         {
             InitializeComponent();
 
-            var balance = ATMServices.ShowBalance();
-            lbBalance.Text = $"Your balance is .........";
+            var balance = ATMServices.ShowBalance(currentCard);
+            lbBalance.Text = $"Your balance is {balance} $";
+        }
+
+        private void btnClose1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
