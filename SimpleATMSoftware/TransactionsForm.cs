@@ -10,8 +10,8 @@ namespace SimpleATMSoftware
         public TransactionsForm(ATM matchingCard)
         {
             InitializeComponent();
-            currentCard = matchingCard;
-            RenderToListView(matchingCard.Transactions);
+            var transactions = ATMServices.ShowLast5Transactions(matchingCard);
+            RenderToListView(transactions);
         }
 
         public void RenderToListView(List<Transaction> transactions)
@@ -19,7 +19,7 @@ namespace SimpleATMSoftware
             lvTransaction.Clear();
             foreach (Transaction transaction in transactions)
             {
-                if (transaction == null)
+                if (transaction is null)
                 {
                     throw new ArgumentNullException("Not null");
                 }
