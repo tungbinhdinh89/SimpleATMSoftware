@@ -24,17 +24,17 @@ namespace SimpleATMSoftware
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(btnAccept.Text))
+            if (string.IsNullOrWhiteSpace(txtAmount.Text))
             {
                 MessageBox.Show("Amount should not be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            //if (!IsNumeric(txtAmount.Text))
-            //{
-            //    MessageBox.Show("Amount should be a valid number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (!txtAmount.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Amount should be a valid number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             var amount = Convert.ToInt32(txtAmount.Text);
             ATMServices.Withdraw(amount, currentCard);
