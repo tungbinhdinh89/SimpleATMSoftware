@@ -1,4 +1,5 @@
-﻿using ATMApp.Lib.Services;
+﻿using ATMApp.Lib.Models;
+using ATMApp.Lib.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,29 +14,36 @@ namespace SimpleATMSoftware
 {
     public partial class ViewDetailForm : Form
     {
+        public ATM matching;
         public ATMServices ATMServices = new ATMServices();
-        public ViewDetailForm()
+        public ViewDetailForm(ATM matchingCard)
         {
             InitializeComponent();
-            lbGreeting.Text = $"Hi! Tung";
+            lbGreeting.Text = $"Hi! {matchingCard.FullName}";
+            matching = matchingCard;
         }
 
         private void btnViewBalance_Click(object sender, EventArgs e)
         {
-            var formBalance = new BalanceForm();
+            var formBalance = new BalanceForm(matching);
             formBalance.ShowDialog();
         }
 
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-            var formWithdraw = new WithdrawForm();
+            var formWithdraw = new WithdrawForm(matching);
             formWithdraw.ShowDialog();
         }
 
         private void btnLast5Transactions_Click(object sender, EventArgs e)
         {
-            var formTransaction = new TransactionsForm();
+            var formTransaction = new TransactionsForm(matching);
             formTransaction.ShowDialog();
+        }
+
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

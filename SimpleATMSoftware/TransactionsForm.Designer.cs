@@ -46,12 +46,13 @@
             label1.Size = new Size(284, 36);
             label1.TabIndex = 0;
             label1.Text = "Last 5 transactions";
+            label1.UseWaitCursor = true;
             // 
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
             listView1.GridLines = true;
-            listView1.Location = new Point(27, 129);
+            listView1.Location = new Point(-1, 129);
             listView1.Name = "listView1";
             listView1.Size = new Size(805, 510);
             listView1.TabIndex = 1;
@@ -73,10 +74,11 @@
             panel1.BackColor = SystemColors.ControlLight;
             panel1.Controls.Add(btnX);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(27, 27);
+            panel1.Location = new Point(-1, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(805, 101);
+            panel1.Size = new Size(805, 129);
             panel1.TabIndex = 2;
+            panel1.UseWaitCursor = true;
             // 
             // btnX
             // 
@@ -92,15 +94,20 @@
             btnX.TabIndex = 3;
             btnX.Text = "X";
             btnX.UseVisualStyleBackColor = true;
+            btnX.UseWaitCursor = true;
+            btnX.Click += btnX_Click;
             // 
             // TransactionsForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(864, 667);
+            ClientSize = new Size(808, 638);
+            ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(listView1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "TransactionsForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "TransactionsForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

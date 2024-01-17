@@ -100,8 +100,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(993, 219);
+            ControlBox = false;
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "BalanceForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "BalanceForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

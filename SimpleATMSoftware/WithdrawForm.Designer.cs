@@ -30,7 +30,7 @@
         {
             txtAmount = new TextBox();
             label1 = new Label();
-            label2 = new Label();
+            lbBalance = new Label();
             btnClose1 = new Button();
             btnAccept = new Button();
             panel1 = new Panel();
@@ -40,6 +40,7 @@
             // 
             // txtAmount
             // 
+            txtAmount.Font = new Font("Microsoft Sans Serif", 11.8208952F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtAmount.Location = new Point(46, 85);
             txtAmount.Multiline = true;
             txtAmount.Name = "txtAmount";
@@ -57,15 +58,14 @@
             label1.TabIndex = 1;
             label1.Text = "Withdraw";
             // 
-            // label2
+            // lbBalance
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.8208952F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(46, 162);
-            label2.Name = "label2";
-            label2.Size = new Size(156, 30);
-            label2.TabIndex = 2;
-            label2.Text = "Your balance is";
+            lbBalance.AutoSize = true;
+            lbBalance.Font = new Font("Segoe UI", 11.8208952F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbBalance.Location = new Point(46, 162);
+            lbBalance.Name = "lbBalance";
+            lbBalance.Size = new Size(0, 30);
+            lbBalance.TabIndex = 2;
             // 
             // btnClose1
             // 
@@ -78,6 +78,7 @@
             btnClose1.TabIndex = 3;
             btnClose1.Text = "Close";
             btnClose1.UseVisualStyleBackColor = false;
+            btnClose1.Click += btnClose1_Click;
             // 
             // btnAccept
             // 
@@ -100,7 +101,7 @@
             panel1.Controls.Add(btnAccept);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnClose1);
-            panel1.Controls.Add(label2);
+            panel1.Controls.Add(lbBalance);
             panel1.Location = new Point(12, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1013, 271);
@@ -117,6 +118,7 @@
             btnX.TabIndex = 6;
             btnX.Text = "X";
             btnX.UseVisualStyleBackColor = true;
+            btnX.Click += btnX_Click;
             // 
             // WithdrawForm
             // 
@@ -124,8 +126,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(1023, 268);
+            ControlBox = false;
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "WithdrawForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "WithdrawForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -136,7 +141,7 @@
 
         private TextBox txtAmount;
         private Label label1;
-        private Label label2;
+        private Label lbBalance;
         private Button btnClose1;
         private Button btnAccept;
         private Panel panel1;

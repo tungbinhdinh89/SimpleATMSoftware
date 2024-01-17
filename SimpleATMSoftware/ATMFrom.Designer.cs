@@ -31,6 +31,7 @@
             txtCardNumber = new TextBox();
             txtPinNumber = new TextBox();
             btnLogin = new Button();
+            btnX = new Button();
             SuspendLayout();
             // 
             // txtCardNumber
@@ -66,15 +67,31 @@
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
+            // btnX
+            // 
+            btnX.FlatAppearance.BorderSize = 0;
+            btnX.FlatStyle = FlatStyle.Flat;
+            btnX.Font = new Font("Segoe UI", 13.970149F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnX.Location = new Point(862, 1);
+            btnX.Name = "btnX";
+            btnX.Size = new Size(68, 50);
+            btnX.TabIndex = 7;
+            btnX.Text = "X";
+            btnX.UseVisualStyleBackColor = true;
+            btnX.Click += btnX_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(931, 802);
+            ControlBox = false;
+            Controls.Add(btnX);
             Controls.Add(btnLogin);
             Controls.Add(txtPinNumber);
             Controls.Add(txtCardNumber);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "ATMForm";
             ResumeLayout(false);
@@ -86,5 +103,6 @@
         private TextBox txtCardNumber;
         private TextBox txtPinNumber;
         private Button btnLogin;
+        private Button btnX;
     }
 }

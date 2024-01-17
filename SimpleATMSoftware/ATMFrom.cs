@@ -6,7 +6,7 @@ namespace SimpleATMSoftware
     public partial class Form1 : Form
     {
         public ATMServices ATMServices = new ATMServices();
-        public ATM matchingCard ;
+        public ATM matchingCard;
         public Form1()
         {
             InitializeComponent();
@@ -48,6 +48,11 @@ namespace SimpleATMSoftware
             {
                 MessageBox.Show($"Unexpected error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

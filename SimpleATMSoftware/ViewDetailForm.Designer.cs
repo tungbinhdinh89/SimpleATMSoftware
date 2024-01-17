@@ -32,6 +32,7 @@
             btnWithdraw = new Button();
             btnLast5Transactions = new Button();
             lbGreeting = new Label();
+            btnX = new Button();
             SuspendLayout();
             // 
             // btnViewBalance
@@ -79,9 +80,21 @@
             lbGreeting.Font = new Font("Segoe UI", 11.8208952F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbGreeting.Location = new Point(79, 33);
             lbGreeting.Name = "lbGreeting";
-            lbGreeting.Size = new Size(159, 30);
+            lbGreeting.Size = new Size(0, 30);
             lbGreeting.TabIndex = 3;
-            lbGreeting.Text = "Hi! User name";
+            // 
+            // btnX
+            // 
+            btnX.FlatAppearance.BorderSize = 0;
+            btnX.FlatStyle = FlatStyle.Flat;
+            btnX.Font = new Font("Segoe UI", 13.970149F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnX.Location = new Point(903, 0);
+            btnX.Name = "btnX";
+            btnX.Size = new Size(68, 50);
+            btnX.TabIndex = 8;
+            btnX.Text = "X";
+            btnX.UseVisualStyleBackColor = true;
+            btnX.Click += btnX_Click;
             // 
             // ViewDetailForm
             // 
@@ -89,10 +102,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(973, 829);
+            ControlBox = false;
+            Controls.Add(btnX);
             Controls.Add(lbGreeting);
             Controls.Add(btnLast5Transactions);
             Controls.Add(btnWithdraw);
             Controls.Add(btnViewBalance);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "ViewDetailForm";
             Text = "ViewDetailForm";
             ResumeLayout(false);
@@ -105,5 +121,6 @@
         private Button btnWithdraw;
         private Button btnLast5Transactions;
         private Label lbGreeting;
+        private Button btnX;
     }
 }

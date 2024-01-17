@@ -1,4 +1,5 @@
-﻿using ATMApp.Lib.Services;
+﻿using ATMApp.Lib.Models;
+using ATMApp.Lib.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace SimpleATMSoftware
     public partial class WithdrawForm : Form
     {
         public ATMServices ATMServices { get; set; } = new ATMServices();
-        public WithdrawForm()
+        public ATM currentCard = new ATM();
+        public WithdrawForm(ATM matchingCard)
         {
             InitializeComponent();
+            currentCard = matchingCard;
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -33,8 +36,19 @@ namespace SimpleATMSoftware
             //    return;
             //}
 
-            var amount = Convert.ToInt32(btnAccept.Text);
-            ATMServices.Withdraw(amount);
+            var amount = Convert.ToInt32(txtAmount.Text);
+            ATMServices.Withdraw(amount, currentCard);
+            lbBalance.Text = $"Your balance is {currentCard.Balance} $";
+        }
+
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClose1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

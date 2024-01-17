@@ -6,10 +6,11 @@ namespace SimpleATMSoftware
     public partial class TransactionsForm : Form
     {
         public ATMServices ATMServices { get; set; } = new ATMServices();
-
-        public TransactionsForm()
+        public ATM currentCard = new ATM();
+        public TransactionsForm(ATM matchingCard)
         {
             InitializeComponent();
+            currentCard = matchingCard;
         }
 
         public void RenderToListView(List<Transaction> transactions)
@@ -23,6 +24,11 @@ namespace SimpleATMSoftware
 
 
             }
+        }
+
+        private void btnX_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
